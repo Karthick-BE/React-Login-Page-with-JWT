@@ -21,7 +21,7 @@ function Profile() {
      <section className="vh-100" style={{backgroundImage:`url(${bagroundimage})`}}>
       
       <div>
-       <h5  className=" pt-5 text-white"> Welcome to Profile Page </h5>
+       <h5  className=" pt-4 text-white"> Welcome to Profile Page </h5>
         <br />
         <br />
         <button className="btn btn-info mt-4" onClick={handleLogout}>
