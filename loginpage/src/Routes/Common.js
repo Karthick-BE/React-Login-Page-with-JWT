@@ -2,12 +2,17 @@ export const getToken = () => {
   return sessionStorage.getItem("token") || null;
 };
 
-export const removeUserSession = () => {
-  sessionStorage.removeItem("token");
-  sessionStorage.removeItem("user");
+export const getRefreshToken = () => {
+  return sessionStorage.getItem("refreshtoken") || null;
 };
 
-export const setUserSession = (token, user) => {
+export const removeUserSession = () => {
+  sessionStorage.removeItem("token");
+  // sessionStorage.removeItem("user");
+};
+
+export const setUserSession = (token,refreshtoken) => {
   sessionStorage.setItem("token", token);
-  sessionStorage.setItem("user", JSON.stringify(user));
+  sessionStorage.setItem("refreshtoken", refreshtoken);
+  // sessionStorage.setItem("user", JSON.stringify(user));
 };

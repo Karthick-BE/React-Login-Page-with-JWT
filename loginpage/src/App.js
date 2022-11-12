@@ -1,21 +1,15 @@
 import "./App.css";
 import Login from "./Pages/Login";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./Pages/Profile";
 import { getToken } from "./Routes/Common";
 import PrivateRoute from "./Routes/PrivateRoute"
 
-
-
 function App() {
-  const[authLoading,setAuthLoading]=useState(false)
-  useEffect(()=>{
-    const token=getToken();
-    if(token){
-      setAuthLoading(true)
-    }
-  },[])
+  const token=getToken();
+  const[authLoading]=useState(token?true:false)
+  
   return (
     <div className="App">
       <BrowserRouter>
