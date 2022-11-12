@@ -7,7 +7,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-
 function Login() {
   const [name, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,12 +29,12 @@ function Login() {
           setUserSession(response.data.token, response.data.refreshtoken);
           navigate("/Profile");
         })
-        .catch(error => {
+        .catch((error) => {
           setLoading(false);
           if (error.response === 401) {
             setError(error.response.data.status);
           } else setError("Something went wrong. Please try again later.");
-        })
+        });
     } else {
       alert("Enter a Value");
     }
@@ -48,7 +47,10 @@ function Login() {
   return (
     <section
       className="vh-100"
-      style={{ backgroundImage: `url(${bagroundimage})`,backgroundPosition:"center" }}
+      style={{
+        backgroundImage: `url(${bagroundimage})`,
+        backgroundPosition: "center",
+      }}
     >
       <Container>
         <div className="row py-5">
@@ -60,7 +62,7 @@ function Login() {
               style={{ borderRadius: "0.7rem" }}
             >
               <Container>
-                <div className="mt-5">
+                <div className="mt-5 text-center">
                   {" "}
                   <h3>Login Page</h3>{" "}
                 </div>
@@ -103,14 +105,23 @@ function Login() {
                 <br />
                 {error && (
                   <>
-                    <small style={{ color: "red" ,fontSize:"13px",fontWeight:"bold"}}>{error}</small>
+                    <small
+                      style={{
+                        color: "red",
+                        fontSize: "13px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {error}
+                    </small>
                     <br />
                   </>
                 )}
                 <br />
-                
+
                 <button
-                  className="btn btn-primary   "
+                  className="btn btn-primary"
+                  style={{ marginLeft: "60px" }}
                   value={loading ? "Loading..." : "Login"}
                   onClick={AddData}
                   disabled={loading}
@@ -119,7 +130,7 @@ function Login() {
                 </button>
                 <button className="btn btn-danger m-2" onClick={DeleteData}>
                   Cancel
-                </button> 
+                </button>
                 <br />
                 <br />
                 <br />

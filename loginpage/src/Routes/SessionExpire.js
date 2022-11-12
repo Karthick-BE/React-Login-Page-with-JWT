@@ -6,7 +6,7 @@ export const SessionExpire = () => {
     const createTimeout = () =>
       setTimeout(() => {
         window.location.href = "/";
-      }, 30000);
+      }, 300000);
     const listener = () => {
       clearTimeout(timeout);
       timeout = createTimeout();

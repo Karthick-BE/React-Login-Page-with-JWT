@@ -8,11 +8,9 @@ export const getRefreshToken = () => {
 
 export const removeUserSession = () => {
   sessionStorage.removeItem("token");
-  // sessionStorage.removeItem("user");
 };
 
-export const setUserSession = (token,refreshtoken) => {
+export const setUserSession = (token, refreshtoken) => {
   sessionStorage.setItem("token", token);
   sessionStorage.setItem("refreshtoken", refreshtoken);
-  // sessionStorage.setItem("user", JSON.stringify(user));
 };
