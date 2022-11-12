@@ -121,7 +121,6 @@ function Login() {
 
                 <button
                   className="btn btn-primary"
-                  style={{ marginLeft: "60px" }}
                   value={loading ? "Loading..." : "Login"}
                   onClick={AddData}
                   disabled={loading}
